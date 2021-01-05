@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.kh.ddoda.require.domain.Require" alias="Require"/>
+		<typeAlias type="com.kh.ddoda.require.domain.Reply" alias="Reply"/>
+		<typeAlias type="com.kh.ddoda.notice.domain.Notice" alias="Notice"/>
+		<typeAlias type="com.kh.ddoda.notice.domain.SelectNotice" alias="SelectNotice"/>
+		<typeAlias type="com.kh.ddoda.mate.domain.Mate" alias="Mate"/>
+		<typeAlias type="com.kh.ddoda.mate.domain.MateComment" alias="MateCom"/>
+		<typeAlias type="com.kh.ddoda.mate.domain.Mymate" alias="Mymate"/>
+		<typeAlias type="com.kh.ddoda.opendiary.domain.Opendiary" alias="Opendiary"/>
+		<typeAlias type="com.kh.ddoda.opendiary.domain.DiaryImg" alias="DiaryImg"/>
+		<typeAlias type="com.kh.ddoda.opendiary.domain.OpendiaryComment" alias="OpendiaryComment"/>
+		
+		<typeAlias type="com.kh.ddoda.facility.domain.ExerciseFacility" alias="Facility"/>
+		<typeAlias type="com.kh.ddoda.facility.domain.FacilityPicture" alias="FacilityPicture"/>
+		<typeAlias type="com.kh.ddoda.facility.domain.InstructorInfo" alias="InstructorInfo"/>
+		<typeAlias type="com.kh.ddoda.facility.domain.FacilityPrice" alias="FacilityPrice"/>
+		<typeAlias type="com.kh.ddoda.chat.domain.Chat" alias="Chat"/>
+		<typeAlias type="com.kh.ddoda.member.domain.Member" alias="member"/>
+		<typeAlias type="com.kh.ddoda.calorie.domain.Calorie" alias="AdminCalorie"/>
+		
+		<typeAlias type="com.kh.ddoda.calendar.domain.MemberInfo" alias="MemberInfo"/>
+		<typeAlias type="com.kh.ddoda.calendar.domain.MyCalorie" alias="MyCalorie"/>
+		<typeAlias type="com.kh.ddoda.calendar.domain.Calorie" alias="Calorie"/>
+		<typeAlias type="com.kh.ddoda.calendar.domain.Diary" alias="Diary"/>
+		<typeAlias type="com.kh.ddoda.calendar.domain.MyDiet" alias="MyDiet"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappers/mate-mapper.xml"/>
+		<mapper resource="mappers/opendiary-mapper.xml"/>
+		<mapper resource="mappers/require-mapper.xml" />
+		<mapper resource="mappers/facility-mapper.xml"/>
+		<mapper resource="mappers/member-mapper.xml" />
+		<mapper resource="mappers/notice-mapper.xml"/>
+		<mapper resource="mappers/facility-mapper.xml"/>
+		<mapper resource="mappers/calorie-mapper.xml"/>
+		<mapper resource="mappers/chat-mapper.xml"/>
+		<mapper resource="mappers/calendar-mapper.xml"></mapper>
+	</mappers>
+</configuration>

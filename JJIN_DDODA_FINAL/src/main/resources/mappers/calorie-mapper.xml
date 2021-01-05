@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="CalorieMapper">
+	<resultMap type="AdminCalorie" id="calorieResultMap">
+		<result property="calorieNo" column="CALORIE_NO"/>
+	</resultMap>
+	<select id="getCalorieListCount" resultType="int">
+		SELECT COUNT(*) FROM CALORIE
+	</select>
+	<select id="adminCalorieList" resultMap="calorieResultMap">
+		SELECT * FROM CALORIE
+	</select>
+	<select id="adminSelectCalorie" resultMap="calorieResultMap">
+		SELECT * FROM CALORIE
+		WHERE CALORIE_NO = #{calorieNo}
+	</select>
+	<insert id="adminCalorieInsert">
+		INSERT INTO CALORIE
+		VALUES (SEQ_CALORIE.NEXTVAL, #{foodName}, #{kcal}, #{foodAmount}, #{unit})
+	</insert>
+	<update id="adminUpdateCalorie">
+		UPDATE CALORIE
+		<set>
+			<if test="foodName != ''">FOODNAME = #{foodName},</if>
+			<if test="kcal != ''">KCAL = #{kcal},</if>
+			<if test="foodAmount != ''">FOODAMOUNT = #{foodAmount}</if>
+		</set>
+		WHERE CALORIE_NO = #{calorieNo}
+	</update>
+	<delete id="adminDeleteCalorie">
+		DELETE FROM CALORIE
+		WHERE CALORIE_NO = #{calorieNo}
+	</delete>
+</mapper>
